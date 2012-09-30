@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1Simple", "1Simple\1Simple.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2SimpleWithFormatting", "2SimpleWithFormatting\2SimpleWithFormatting.csproj", "{BECB3253-B920-4CC9-A241-B7263911801D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3ExtensionMethod", "3ExtensionMethod\3ExtensionMethod.csproj", "{88F48C92-FEBB-4245-9039-F597FBA2D91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4ExtensionReadFile", "4ExtensionReadFile\4ExtensionReadFile.csproj", "{B69BCF80-8171-4777-9C77-8C4592B61CF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +23,14 @@ Global
 		{BECB3253-B920-4CC9-A241-B7263911801D}.Debug|x86.Build.0 = Debug|x86
 		{BECB3253-B920-4CC9-A241-B7263911801D}.Release|x86.ActiveCfg = Release|x86
 		{BECB3253-B920-4CC9-A241-B7263911801D}.Release|x86.Build.0 = Release|x86
+		{88F48C92-FEBB-4245-9039-F597FBA2D91D}.Debug|x86.ActiveCfg = Debug|x86
+		{88F48C92-FEBB-4245-9039-F597FBA2D91D}.Debug|x86.Build.0 = Debug|x86
+		{88F48C92-FEBB-4245-9039-F597FBA2D91D}.Release|x86.ActiveCfg = Release|x86
+		{88F48C92-FEBB-4245-9039-F597FBA2D91D}.Release|x86.Build.0 = Release|x86
+		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Debug|x86.ActiveCfg = Debug|x86
+		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Debug|x86.Build.0 = Debug|x86
+		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Release|x86.ActiveCfg = Release|x86
+		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

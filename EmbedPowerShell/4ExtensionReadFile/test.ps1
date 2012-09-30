@@ -1,0 +1,1 @@
+﻿Get-Process | Where {$_.Handles -gt 700} | Sort PM
