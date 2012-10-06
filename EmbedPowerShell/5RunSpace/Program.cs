@@ -9,8 +9,41 @@ namespace _5RunSpace
     {
         static void Main(string[] args)
         {
-            // Uses a runspace
+            // Uses a runspace to add .NET objects as variables
+            // Adds a variable named Person
+            AddPersonVariable();
 
+            "$Person".ExecutePowerShell().Print();
+            //"$Person | ConvertTo-Json".ExecutePowerShell().Print();
+
+            // Adds a variable named People            
+            AddListOfPeople();
+            
+            //"$People".ExecutePowerShell()
+            //    .Print();
+
+            //AddListOfPeople();
+            //"$People | ConvertTo-Json".ExecutePowerShell()
+            //    .Print();
+        }
+
+        private static void AddListOfPeople()
+        {
+            var people = new List<Person>
+            {
+                new Person { Name = "John", Age = 10, Pets = new List<string> { "dog", "cat" } },
+                new Person { Name = "Jane", Age = 20, Pets = new List<string> { "bird", "snake" } },
+                new Person { Name = "Tom", Age = 30, Pets = new List<string> { "fish", "hamster" } }
+            };
+
+
+            // 'Inject' the object into PowerShell
+            PowerShellExtensions.AddVariable("People", people);
+
+        }
+
+        private static void AddPersonVariable()
+        {
             var p = new Person
             {
                 Name = "John",
@@ -21,9 +54,6 @@ namespace _5RunSpace
             // 'Inject' the object into PowerShell
             PowerShellExtensions
                 .AddVariable("Person", p);
-
-            "$Person".ExecutePowerShell().Print();
-            //"$Person | convertto-json".ExecutePowerShell().Print();
         }
     }
 
