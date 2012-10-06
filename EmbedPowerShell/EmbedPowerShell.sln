@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3ExtensionMethod", "3Extens
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4ExtensionReadFile", "4ExtensionReadFile\4ExtensionReadFile.csproj", "{B69BCF80-8171-4777-9C77-8C4592B61CF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5RunSpace", "5RunSpace\5RunSpace.csproj", "{3AB8BEBE-2FD6-435C-9604-C1252607DF0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +33,10 @@ Global
 		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Debug|x86.Build.0 = Debug|x86
 		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Release|x86.ActiveCfg = Release|x86
 		{B69BCF80-8171-4777-9C77-8C4592B61CF5}.Release|x86.Build.0 = Release|x86
+		{3AB8BEBE-2FD6-435C-9604-C1252607DF0B}.Debug|x86.ActiveCfg = Debug|x86
+		{3AB8BEBE-2FD6-435C-9604-C1252607DF0B}.Debug|x86.Build.0 = Debug|x86
+		{3AB8BEBE-2FD6-435C-9604-C1252607DF0B}.Release|x86.ActiveCfg = Release|x86
+		{3AB8BEBE-2FD6-435C-9604-C1252607DF0B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
