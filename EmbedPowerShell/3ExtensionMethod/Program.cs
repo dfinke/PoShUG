@@ -8,6 +8,8 @@ namespace _3ExtensionMethod
     {
         static void Main(string[] args)
         {
+             // Adds a Print ext method
+
             "dir".ExecutePowerShell().Print();
 
             //var pi = "[Math]::Pi".ExecutePowerShell();

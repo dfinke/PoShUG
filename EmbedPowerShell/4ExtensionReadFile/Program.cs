@@ -7,7 +7,9 @@ namespace _4ExtensionReadFile
     {
         static void Main(string[] args)
         {
-            ExecuteFile();
+            // ExecutePowerShell can run a script file
+
+            "test.ps1".ExecutePowerShell().Print();            
             //ConvertToJson();
         }
 
@@ -28,11 +30,6 @@ namespace _4ExtensionReadFile
 } | ConvertTo-Json
 ";
             script.ExecutePowerShell().Print();
-        }
-
-        private static void ExecuteFile()
-        {
-            "test.ps1".ExecutePowerShell().Print();
         }
     }
 
