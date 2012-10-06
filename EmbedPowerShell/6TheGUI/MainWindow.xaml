@@ -2,8 +2,19 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="350" Width="525">
+        Loaded="Window_Loaded"
+        Title="PowerShell Console" Height="600" Width="800">
     <Grid>
+        <TextBox x:Name="Console" 
+                 FontFamily="Consolas"
+                 FontSize="16"
+                 Background="Blue"
+                 Foreground="WhiteSmoke"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 KeyUp="Console_KeyUp"
+                 />
         
     </Grid>
 </Window>

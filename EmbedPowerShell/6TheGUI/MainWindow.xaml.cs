@@ -2,6 +2,7 @@
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
 using System.Windows;
+using System.Windows.Input;
 
 namespace _6TheGUI
 {
@@ -10,9 +11,46 @@ namespace _6TheGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        int lastCaretIndex;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Console.Focus();
+            DisplayPrompt();
+            PowerShellExtensions.AddVariable("psc", this.Console);
+        }
+
+        private void DisplayPrompt()
+        {
+            Console.Text += "> ";
+            Console.CaretIndex = Console.Text.Length;
+            lastCaretIndex = Console.CaretIndex;
+        }
+
+        private void Console_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var script = Console.Text.Substring(lastCaretIndex);
+
+                if (script.Trim().ToLower() == "cls")
+                {
+                    Console.Text = "";
+                }
+                else
+                {
+                    Console.Text += script.ExecutePowerShell();
+                }
+
+                DisplayPrompt();
+
+                e.Handled = true;
+            }
         }
     }
 
@@ -27,6 +65,7 @@ namespace _6TheGUI
                 if (rs == null)
                 {
                     rs = RunspaceFactory.CreateRunspace();
+                    rs.ThreadOptions = PSThreadOptions.UseCurrentThread;
                     rs.Open();
                 }
 
