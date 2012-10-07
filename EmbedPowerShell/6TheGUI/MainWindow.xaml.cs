@@ -22,7 +22,41 @@ namespace _6TheGUI
         {
             Console.Focus();
             DisplayPrompt();
+
+            PowerShellExtensions.AddVariable("window", this);
             PowerShellExtensions.AddVariable("psc", this.Console);
+        }
+
+        private void Console_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Enter:
+
+                    InvokeScript();
+                    DisplayPrompt();
+                    e.Handled = true;
+
+                    break;
+            }
+        }
+
+        private void InvokeScript()
+        {
+            var script = Console.Text.Substring(lastCaretIndex);
+
+            switch (script.Trim().ToLower())
+            {
+                case "cls":
+                    Console.Text = "";
+                    break;
+                case "exit":
+                    this.Close();
+                    break;
+                default:
+                    Console.Text += script.ExecutePowerShell();
+                    break;
+            }
         }
 
         private void DisplayPrompt()
@@ -31,30 +65,10 @@ namespace _6TheGUI
             Console.CaretIndex = Console.Text.Length;
             lastCaretIndex = Console.CaretIndex;
         }
-
-        private void Console_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                var script = Console.Text.Substring(lastCaretIndex);
-
-                if (script.Trim().ToLower() == "cls")
-                {
-                    Console.Text = "";
-                }
-                else
-                {
-                    Console.Text += script.ExecutePowerShell();
-                }
-
-                DisplayPrompt();
-
-                e.Handled = true;
-            }
-        }
     }
 
-    public static class PowerShellExtensions
+#region PowerShellExtensions
+		    public static class PowerShellExtensions
     {
         static Runspace rs;
 
@@ -99,5 +113,5 @@ namespace _6TheGUI
             Console.WriteLine(target);
         }
     }
-
+	#endregion
 }
