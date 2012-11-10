@@ -67,8 +67,8 @@ namespace _6TheGUI
         }
     }
 
-#region PowerShellExtensions
-		    public static class PowerShellExtensions
+    #region PowerShellExtensions
+    public static class PowerShellExtensions
     {
         static Runspace rs;
 
@@ -113,5 +113,5 @@ namespace _6TheGUI
             Console.WriteLine(target);
         }
     }
-	#endregion
+    #endregion
 }
